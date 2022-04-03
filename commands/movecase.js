@@ -13,7 +13,7 @@ module.exports = {
                 const category = interaction.guild.channels.cache.find(channel => channel.name === '📦 Archives');
                 if (category) {
                     await channel.setParent(category.id);
-                    return interaction.reply(`Le salon ${name} a été déplacé dans la catégorie Enquêtes`);
+                    return interaction.reply(`Le dossier ${name} a été archivé`);
                 }
                 return interaction.reply('La catégorie Archives n\'a pas été trouvée');
             }

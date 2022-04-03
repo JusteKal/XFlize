@@ -14,9 +14,9 @@ module.exports = {
             const category = interaction.guild.channels.cache.find(channel => channel.name === '📚 Dossiers en cours');
             if (category) {
                 await channel.setParent(category.id);
-                return interaction.reply(`Le salon ${name} a été créé dans la catégorie Enquêtes`);
+                return interaction.reply(`Le dossier ${name} a été créée`);
         }
-            return interaction.reply('La catégorie Archives n\'a pas été trouvée');
+            return interaction.reply('La catégorie Dossier en cours n\'a pas été trouvée');
         }
         return interaction.reply('Le nom que tu veux donner à ton salon est pas valide');
     }
