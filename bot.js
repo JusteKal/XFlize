@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-const { BOT_TOKEN  } = require('./config.json');
 const fs = require('fs');
 const { Collection } = require('discord.js')
 const bot = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
