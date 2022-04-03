@@ -1,4 +1,4 @@
 config.json
 /node_modules/*
 storage/
-deploy-commands.json
+deploy-commands.js
