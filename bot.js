@@ -20,33 +20,6 @@ bot.on('messageCreate', message => {
     }
 });
 
-// une commande pour créer un salon textuel //
-bot.on('messageCreate', message => {
-    if (message.content === '!nc') {
-        const proute = message.content.split(' ') [1];
-        if (proute) {
-            message.guild.channels.create(proute, { type: 'text' }).then(channel => console.log(`Created new channel ${channel}`));
-            message.channel.send(`Le salon ${proute} a été créé`);
-        } else {
-            message.channel.send('Vous devez préciser un nom de salon');
-        }
-    }
-});
-
-// commande pour modifier le nom d'un salon existant //
-bot.on('messageCreate', message => {
-    if (message.content === '!mc') {
-        const proute = message.content.split(' ') [1];
-        const nroute = message.content.split(' ') [2];
-        if (proute && nroute) {
-            message.guild.channels.cache.find(channel => channel.name === proute).setName(nroute);
-            message.channel.send(`Le salon ${proute} a été renommé en ${nroute}`);
-        } else {
-            message.channel.send('Vous devez préciser un nom de salon et un nouveau nom de salon');
-        }
-    }
-});
-
 
 bot.on('interactionCreate', async interaction => {
 	if (!interaction.isCommand()) return;
@@ -65,7 +38,10 @@ bot.on('interactionCreate', async interaction => {
 
 bot.on('ready,', () => {
     console.log('I am ready!');
-    bot.user.setActivity("enquêter");
+    if (bot.user.presence.status === 'online') {
+        bot.user.setActivity("enquêter");
+        bot.user.setStatus('dnd');
+    }
     console.log('error', console.error);
 });
 
