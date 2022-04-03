@@ -2,3 +2,4 @@ config.json
 /node_modules/*
 storage/
 deploy-commands.js
+bot.js
