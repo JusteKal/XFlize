@@ -15,4 +15,4 @@ const rest = new REST({ version: '9' }).setToken(BOT_TOKEN);
 
 rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: commands })
 	.then(() => console.log('Successfully registered application commands.'))
-	.catch(console.error);
+	.catch(console.error);git 
