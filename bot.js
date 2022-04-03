@@ -11,14 +11,12 @@ for (const file of commandFiles) {
 	bot.commands.set(command.data.name, command);
 }
 
-// discord bot custom activity and status //
-bot.on('messageCreate', message => {
-    if (message.content === '!status') {
+
+bot.on('ready', () => {
         bot.user.setActivity("enquêter");
         bot.user.setStatus('dnd');
-        message.channel.send('Je suis en train de faire des enquêtes !');
-    }
-});
+        console.log(`Logged in as ${bot.user.tag}!`);
+    });
 
 
 bot.on('interactionCreate', async interaction => {
@@ -36,14 +34,6 @@ bot.on('interactionCreate', async interaction => {
 	}
 });
 
-bot.on('ready,', () => {
-    console.log('I am ready!');
-    if (bot.user.presence.status === 'online') {
-        bot.user.setActivity("enquêter");
-        bot.user.setStatus('dnd');
-    }
-    console.log('error', console.error);
-});
 
 bot.login(BOT_TOKEN);
 
