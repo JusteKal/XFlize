@@ -1,7 +1,8 @@
+require("dotenv").config();
 const Discord = require('discord.js');
 const fs = require('fs');
 const { Collection } = require('discord.js')
-const bot = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
+const bot = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"] });
 bot.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
@@ -26,6 +27,14 @@ bot.on('interactionCreate', async interaction => {
 		console.error(error);
 		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
 	}
+});
+
+bot.on('guildMemberAdd', guildMember => {
+    guildMember.guild.channels.cache.get('952926518546419723').send(`:green_circle: Bienvenue chez les **XFlize, <@${guildMember.user.id}>!**`);
+});
+
+bot.on('guildMemberRemove', guildMember => {
+	guildMember.guild.channels.cache.get('952926518546419723').send(`:red_circle: Bonne continuation, **<@${guildMember.user.id}>!**`);
 });
 
 bot.login(process.env.TOKEN);
