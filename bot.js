@@ -12,6 +12,8 @@ for (const file of commandFiles) {
 }
 
 bot.on('ready', () => {
+		bot.user.setActivity('Chargement...');
+		bot.user.setStatus('dnd')
         console.log(`Logged in as ${bot.user.tag}!`);
     });
 
@@ -35,7 +37,7 @@ bot.on('guildMemberRemove', guildMember => {
 	guildMember.guild.channels.cache.get('952926518546419723').send(`:red_circle: Bonne continuation, **<@${guildMember.user.id}>!**`);
 });
 
-// changement du jeu du bot de façon aléatoire dans une liste de jeux toutes les heures
+
 bot.on('ready', () => {
 	setInterval(function() {
 		let random = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
@@ -55,7 +57,7 @@ bot.on('ready', () => {
 			bot.user.setActivity("Boucler des dossiers");
 			bot.user.setStatus('dnd');
 		}
-	}, 3600000);
+	}, 6000);
 });
 
 bot.login(process.env.TOKEN);
