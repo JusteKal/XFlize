@@ -37,7 +37,6 @@ bot.on('guildMemberRemove', guildMember => {
 	guildMember.guild.channels.cache.get('952926518546419723').send(`:red_circle: Bonne continuation, **<@${guildMember.user.id}>!**`);
 });
 
-// changement du jeu du bot de façon aléatoire dans une liste de jeux toutes les heures
 bot.on('ready', () => {
 	setInterval(function() {
 		let random = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
