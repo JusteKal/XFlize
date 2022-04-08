@@ -12,8 +12,8 @@ for (const file of commandFiles) {
 }
 
 bot.on('ready', () => {
-		bot.user.setActivity('Chargement...');
-		bot.user.setStatus('dnd')
+		bot.user.setActivity(`Surveiller ${message.guild.size} agents`);
+		bot.user.setStatus('dnd');
         console.log(`Logged in as ${bot.user.tag}!`);
     });
 
