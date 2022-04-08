@@ -10,11 +10,11 @@ module.exports = {
         .addStringOption(option => option.setName('emoji').setDescription('Nom de l\'emoji')),
     async execute(interaction) {
         const name = interaction.options.getString('name');
-        const emoji = interaction.options.getString('emoji');
-        if (name && emoji) {
+        const emote = interaction.options.getString('emoji');
+        if (name && emote) {
             const channel = interaction.guild.channels.cache.find(channel => channel.name === name);
             if (channel) {
-                await channel.setName(`${emoji}``${channel.name}`);
+                await channel.setName(`${emote}``${channel.name}`);
                 // move the channel to the category "📦 Archives"//
                 const category = interaction.guild.channels.cache.find(channel => channel.name === '📦 Archives');
                 if (category) {

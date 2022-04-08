@@ -5,6 +5,12 @@ const { Collection } = require('discord.js')
 const bot = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"] });
 bot.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+//const archive = bot.channels.cache.filter(channel => channel.parentID === '952919671089278976').size;
+//const ouverts = bot.channels.cache.filter(channel => channel.parentID === '952919598708191242').size;
+
+
+
+
 
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
@@ -62,4 +68,14 @@ bot.on('ready', () => {
 	}, 3600000);
 });
 
-bot.login(``);
+//bot.on("ready", () => {
+//    const archiveCount = bot.channels.cache.filter(channel => channel.parentID === '').size;
+//    setInterval(() => {
+//        const channel = bot.channels.cache.get('962072418132840499')
+//        channel.setName(`Dossiers archivés: ${archiveCount.toLocaleString()}`)
+//    }, 5000);
+//});
+
+// calcule et affiche le nombre de channel dans la catégorie "Dossiers ouverts" et "Dossiers archivés" dans
+
+bot.login(process.env.TOKEN);
