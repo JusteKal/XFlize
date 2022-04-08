@@ -5,6 +5,7 @@ const { Collection } = require('discord.js')
 const bot = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"] });
 bot.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+var memberCount = guild.members.filter(member => !member.user.bot).size; 
 
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
