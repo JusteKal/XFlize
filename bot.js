@@ -5,7 +5,6 @@ const { Collection } = require('discord.js')
 const bot = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"] });
 bot.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-var memberCount = guild.members.filter(member => !member.user.bot).size; 
 
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
@@ -13,7 +12,7 @@ for (const file of commandFiles) {
 }
 
 bot.on('ready', () => {
-		bot.user.setActivity(`Surveiller ${memberCount} agents`);
+		bot.user.setActivity(`Chargement...`);
 		bot.user.setStatus('dnd');
         console.log(`Logged in as ${bot.user.tag}!`);
     });
@@ -57,10 +56,10 @@ bot.on('ready', () => {
 			bot.user.setActivity("Boucler des dossiers");
 			bot.user.setStatus('dnd');
 		} else if (random == 6) {
-			bot.user.setActivity(`Surveiller ${memberCount} agents`);
+			bot.user.setActivity(`boucler des dossiers`);
 			bot.user.setStatus('dnd');
 		}
 	}, 3600000);
 });
 
-bot.login(process.env.TOKEN);
+bot.login(``);
