@@ -39,9 +39,9 @@ bot.on('guildMemberRemove', guildMember => {
 
 bot.on('ready', () => {
 	setInterval(function() {
-		let random = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+		let random = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
 		if (random == 1) {
-			bot.user.setActivity("enquêter");
+			bot.user.setActivity("Enquêter");
 			bot.user.setStatus('dnd');
 		} else if (random == 2) {
 			bot.user.setActivity("Écouter les lignes", { type: "LISTENING" });
@@ -54,6 +54,9 @@ bot.on('ready', () => {
 			bot.user.setStatus('dnd');
 		} else if (random == 5) {
 			bot.user.setActivity("Boucler des dossiers");
+			bot.user.setStatus('dnd');
+		} else if (random == 6) {
+			bot.user.setActivity("Surveiller ${message.guild.size}" + " agents");
 			bot.user.setStatus('dnd');
 		}
 	}, 3600000);
