@@ -12,7 +12,7 @@ for (const file of commandFiles) {
 }
 
 bot.on('ready', () => {
-		bot.user.setActivity(`Surveiller ${message.guild.size} agents`);
+		bot.user.setActivity(`Surveiller ${memberCount} agents`);
 		bot.user.setStatus('dnd');
         console.log(`Logged in as ${bot.user.tag}!`);
     });
@@ -56,11 +56,10 @@ bot.on('ready', () => {
 			bot.user.setActivity("Boucler des dossiers");
 			bot.user.setStatus('dnd');
 		} else if (random == 6) {
-			bot.user.setActivity(`Surveiller ${message.guild.size} agents`);
+			bot.user.setActivity(`Surveiller ${memberCount} agents`);
 			bot.user.setStatus('dnd');
 		}
 	}, 3600000);
 });
 
 bot.login(process.env.TOKEN);
-
