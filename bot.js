@@ -56,7 +56,7 @@ bot.on('ready', () => {
 			bot.user.setActivity("Boucler des dossiers");
 			bot.user.setStatus('dnd');
 		} else if (random == 6) {
-			bot.user.setActivity("Surveiller ${message.guild.size}" + " agents");
+			bot.user.setActivity(`Surveiller ${message.guild.size} agents`);
 			bot.user.setStatus('dnd');
 		}
 	}, 3600000);
