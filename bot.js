@@ -44,10 +44,10 @@ bot.on('ready', () => {
 			bot.user.setActivity("enquêter");
 			bot.user.setStatus('dnd');
 		} else if (random == 2) {
-			bot.user.setActivity("Sécuriser les lignes");
+			bot.user.setActivity("Écouter les lignes", { type: "LISTENING" });
 			bot.user.setStatus('dnd');
 		} else if (random == 3) {
-			bot.user.setActivity("Écouter vos potins");
+			bot.user.setActivity("Écouter vos potins", { type: "LISTENING" });
 			bot.user.setStatus('dnd');
 		} else if (random == 4) {
 			bot.user.setActivity("Recruter des agents");
