@@ -5,8 +5,6 @@ const { Collection } = require('discord.js')
 const bot = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"] });
 bot.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-//const archive = bot.channels.cache.filter(channel => channel.parentID === '952919671089278976').size;
-//const ouverts = bot.channels.cache.filter(channel => channel.parentID === '952919598708191242').size;
 
 
 
@@ -50,19 +48,19 @@ bot.on('ready', () => {
 			bot.user.setActivity("Enquêter");
 			bot.user.setStatus('dnd');
 		} else if (random == 2) {
-			bot.user.setActivity("Écouter les lignes", { type: "LISTENING" });
+			bot.user.setActivity("les lignes", { type: "LISTENING" });
 			bot.user.setStatus('dnd');
 		} else if (random == 3) {
-			bot.user.setActivity("Écouter vos potins", { type: "LISTENING" });
+			bot.user.setActivity("vos potins", { type: "LISTENING" });
 			bot.user.setStatus('dnd');
 		} else if (random == 4) {
 			bot.user.setActivity("Recruter des agents");
 			bot.user.setStatus('dnd');
 		} else if (random == 5) {
-			bot.user.setActivity("Boucler des dossiers");
+			bot.user.setActivity("boucler des dossiers");
 			bot.user.setStatus('dnd');
 		} else if (random == 6) {
-			bot.user.setActivity(`boucler des dossiers`);
+			bot.user.setActivity(`arichiver les dossiers`);
 			bot.user.setStatus('dnd');
 		}
 	}, 3600000);
