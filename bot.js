@@ -60,7 +60,7 @@ bot.on('ready', () => {
 			bot.user.setActivity("boucler des dossiers");
 			bot.user.setStatus('dnd');
 		} else if (random == 6) {
-			bot.user.setActivity(`arichiver les dossiers`);
+			bot.user.setActivity(`archiver les dossiers`);
 			bot.user.setStatus('dnd');
 		}
 	}, 3600000);
