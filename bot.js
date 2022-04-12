@@ -50,11 +50,11 @@ bot.on('ready', () => {
 			bot.user.setActivity("boucler des dossiers");
 			bot.user.setStatus('dnd');
 		} else if (random == 6) {
-				bot.user.setActivity("Counting members")
-				memberCount(bot)
-				bot.user.setStatus('dnd');
+			bot.user.setActivity(`archiver les dossiers`);
+			bot.user.setStatus('dnd');
 		}
 	}, 3600000);
 });
 
-bot.login(process.env.BOT_TOKEN);
+bot.login(process.env.TOKEN);
+
