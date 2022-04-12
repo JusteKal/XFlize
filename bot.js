@@ -3,7 +3,6 @@ const Discord = require('discord.js');
 const fs = require('fs');
 const { Collection } = require('discord.js')
 const bot = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"] });
-const {BOT_TOKEN} = require('./config.json')
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
