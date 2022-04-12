@@ -12,7 +12,7 @@ module.exports = {
 			.setThumbnail(member.user.displayAvatarURL())
 			.setTimestamp();
 		
-			member.guild.channels.cache.get('952926518546419723').send({   
+			member.guild.channels.cache.get('952918568427749427').send({   
 				embeds: [newMemberEmbed] 
 			})
 	}
