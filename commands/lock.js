@@ -9,11 +9,11 @@ module.exports = {
     async execute(interaction) {
         const name = interaction.options.getString('name');
         if (name) {
-            const channel = interaction.channel;
+            const channel = interaction.guild.channels.cache.find(channel => channel.name === name);
             if (channel) {
                 const category = interaction.guild.channels.cache.find(channel => channel.name === '📦 Archives');
                 if (category) {
-                    await channel.setName(`🔒${name}`);
+                    await channel.setName(`🔒${channel.name}`);
                     await channel.setParent(category.id);
                     return interaction.reply(`Le dossier ${name} a été archivé`);
                 }
